@@ -1,0 +1,15 @@
+.reveal .footer {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 0.5em;
+  }
+
+
+  .reveal section img.plain_custom {
+    margin: 0px 0px;
+    background: transparent;
+    border: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
+    border: 0;
+    box-shadow: none; }

@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/simple.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -24,20 +25,170 @@
 	</head>
 	<body>
 		<div class="reveal">
+			<div class="footer" id="footer">
+				<a href="https://minside.bouvet.no/metoder/sarbarhet-og-integritetssjekk-av-tredjepartsbiblioteker" target="_blank">https://minside.bouvet.no/metoder/sarbarhet-og-integritetssjekk-av-tredjepartsbiblioteker</a>
+			  </div>
 			<div class="slides">
 				<section>
-					Sårbarhet av tredjepartsbiblioteker
 					<aside class="notes">Intro </aside>
+					<h1>Sårbarhetssjekk av tredjepartsbiblioteker</h1>
+					<h2>Slik angriper du kjente sårbarheter</h2>
+					<p></p>
+					<p>
+						
+					</p>
+					
+					
 				</section>
 				<section>
-					<section>Slide 1
-						<aside class="notes"> mine notater til side 1 </aside>
+					<h1>Agenda</h1>
+					<div>
+						<ul>
+							<li>Sårbarheter generelt</li>
+							<li>Slik vurderer du en sårbarhet</li>
+							<li>Automatisering</li>
+							<li>kjente problemstillinger</li>
+							<li>oppsummering</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<aside class="notes">Vi er sårbare. Vi har alltid vært sårbare og kommer alltid til å være sårbare. Ta bilen som et eksempel. Helt siden Carl Benz oppfant den først bensindrevne bilen i 1886 har vi vært sårbare for bilkræsj.  </aside>
+					<section>
+						<h1>Du er sårbar!</h1>
+						<div class="fragment fade-in" >... og sånn er det med din applikasjon også</div>
+						<video class="stretch" data-autoplay src="img/crash.mp4" loop></video>
 					</section>
-					<section>Verktøy
-						
+					<section data-background="img/fighter.jpg" data-background-size="contain">
+						<aside class="notes">Jeg skal gjøre deg til en fighter mot sårbarheter. Jeg skal i løpet av de neste 10 minuttene gi deg nok selvtilitt til å angripe og slåss mot alle kjente sårbarheter.</aside>
+					</section>
+					<section>
+						<h1>Omfanget kjente sårbarheter øker</h1>
+					</section>
+					<section>
+						<div class="footer">
+							<a href="https://nvd.nist.gov/products/cpe/statistics" target="_blank">https://nvd.nist.gov/products/cpe/statistics</a>
+						</div>
+						<img class="plain_custom" src="img/cvss_statistics.png">
+					</section>
+					<section>
+						<h1>Før vi starter...</h1>
+						<div class="fragment fade-in" ><li>Hva er en kjent sårbarhet?</li></div>
+						<div class="fragment fade-in" ><li>Hvor finner jeg informasjon om dem?</li></div>
+					</section>
+					<section>
+						<h1>CVE & CVSS</h1> 
+						<div  style="text-align:left;">
+							<div class="fragment fade-in">
+								CVE er vår felles liste med:
+								<div style="margin-left:100px">
+									<h3><li>Common Vulnerabilities and Exposures</li></h3>
+								</div>
+							</div>
+							<div class="fragment fade-in">
+								CVSS er vårt felles:
+								<div style="margin-left:100px">
+									<h3><li>Common Vulnerability Scoring System</li></h3>
+								</div>
+							</div>
+							<div class="fragment fade-in">
+								Ressurser:
+								<div style="margin-left:100px">
+									<li><a href="https://cve.mitre.org/" target="_blank">cve.mitre.org</a></li>
+									<li><a href="https://www.first.org/cvss/v3.1/specification-document" target="_blank">www.first.org/cvss</a></li>
+									<li><a href="https://nvd.nist.gov/" target="_blank">nvd.nist.gov</a></li>
+									
+								</div> 
+							</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<aside class="notes">
+							Slik vurderer du en sårbarhet
+							<ul>
+								<li>bruker jeg den delen av koden som er svak?</li>
+								<li>kommer jeg til å bruke den?</li>
+								<li>hvordan er denne sårbarheten eksponert i min kode?</li>
+								<li>kan jeg unngå eller skrive om koden min for å unngå dette?</li>
+							</ul>
+							<h2>konklusjon: hvor kritisk er dette, egentlig?</h2>
+							<p>kan jeg leve med denne sårbarheten?</p>							
+						</aside>
+						<h1>Så la oss se på et eksempel</h1>	
+					</section>
+					<section>
+						<a href="https://nvd.nist.gov/vuln/detail/CVE-2020-8441" target="_blank"><h1>CVE-2020-8441</h1></a>
+						<div>
+							<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:U/RC:R/CR:H/IR:L/AR:L/MAV:A/MAC:H/MPR:L" target="_blank"><span  style="font-size: 0.8em;"><span class="fragment highlight-current-red">CVSS:3.1</span><span class="fragment highlight-current-red">/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</span><span class="fragment highlight-current-red">/E:P/RL:U/RC:R</span><span class="fragment highlight-current-red">/CR:H/IR:L/AR:L/MAV:A/MAC:H/MPR:L</span></span></a>
+						</div>
+						<img class="plain_custom" src="img/cvss_format.png">
+					</section>
+					<section>
+						<h1>Æsj, det var mye arbeid</h1>
+						<div class="fragment fade-in" ><h2>Må det være slik?</h2></div>
+					</section>					
+				</section>
+				
+
+				<section>
+					<aside class="notes">Automatisering </aside>
+					<section>
+						<h1>Løsningen</h1>
+						<div class="fragment fade-in" ><h2>Automatiser og oppgrader</h2></div>
+					</section>
+					<section>
+						<h1>Steg 1: innsamlingen av sårbarhetsinformasjonen</h1>
+						<h3>Automatisk sårbarhetsscan og innsamling av info</h3>
+						<div>
+							<ol>
+								<li>Snyk (komersielt)</li>
+								<li>OWASP Dependency-Check (open source)</li>
+								<li>WhiteSource Bolt (kommersielt)</li>
+								<li>Dependency Track (open source)</li>
+								<li>GitHub security alerts (dersom kildekoden ligger på GitHub)</li>
+								<li>Xray fra jfrog (kommersielt)</li>
+								<li>RetireJS (open source)</li>
+								<li>npm audit (open source)</li>
+							</ol>
+						</div>
+					</section>
+					<section>
+						<h1>Steg 2: Oppgrader alt som kan oppgraderes</h1>
+						<div>Hold din avhengigheter oppdatert. Benytt muligheter for automatisk oppdatering.</div>
+					</section>
+					<section>
+						<h1>Steg 3: manuell vurdering av sårbarheter</h1>
+						<h2>Dette steget må for all del unngåes</h2>
 					</section>
 			</section>
-				<section>Avslutning</section>
+			<section>
+				<aside class="notes">Eksempler</aside>
+				<section>Eksempel 1
+					<div>CVE-2020-9546 -> 9548</div>
+					<div>jackson-databind 2.10.2, brukt av spring-boot</div>
+				</section>
+			</section>
+				<section>
+					<h1>Oppsummering</h1>
+					<br/>
+					
+					<ul>
+						<li>Sårbarheter vurderes med CVSS standarden
+							<ul><li><a href="https://www.first.org/cvss/calculator/" target="_blank">https://www.first.org/cvss/calculator/</a></li></ul>
+						</li>
+						<li>Din byggepipeline skal inneholde:
+							<ul>
+								<li>Automatisk sårbarhetsscan av avhengigheter</li>
+								<li>Forsøk på automatisk oppgradering</li>
+							</ul>
+						</li>
+						<li>Unngå for all del manuell vurdering av kjente sårbarheter
+							<ul><li>Men må du:  <span style="color:whitesmoke">så vet du nå hvordan!</span></li></ul>
+						</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
@@ -48,13 +199,34 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			// width: 960,
+			// height: 700,
+			width: 1920,
+			height: 1080,
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+
+			// Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 1.5,
+
 				hash: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
+					{ src: 'plugin/notes/notes.js', async: true },
+					// Zoom in and out with Alt+click
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					// support for including javascript html pages
+					{ src: 'node_modules/reveald3/reveald3.js' }
+				],
+				// Display the page number of the current slide
+				slideNumber: true,
 			});
 		</script>
 	</body>
