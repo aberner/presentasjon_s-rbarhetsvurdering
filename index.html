@@ -30,28 +30,20 @@
 			  </div>
 			<div class="slides">
 				<section>
+				<section>
+					<aside class="notes">obligatorisk intro side</aside>
+					<img src="img/Slide1.PNG" class="stretch">
+				</section>
+				<section>
+					<aside class="notes">obligatorisk intro side</aside>
+					<img src="img/Slide2.PNG" class="stretch">
+				</section>				
+				<section>
 					<aside class="notes">Intro </aside>
 					<h1>Sårbarhetssjekk av tredjepartsbiblioteker</h1>
 					<h2>Slik angriper du kjente sårbarheter</h2>
-					<p></p>
-					<p>
-						
-					</p>
-					
-					
 				</section>
-				<section>
-					<h1>Agenda</h1>
-					<div>
-						<ul>
-							<li>Sårbarheter generelt</li>
-							<li>Slik vurderer du en sårbarhet</li>
-							<li>Automatisering</li>
-							<li>kjente problemstillinger</li>
-							<li>oppsummering</li>
-						</ul>
-					</div>
-				</section>
+			</section>
 				<section>
 					<aside class="notes">Vi er sårbare. Vi har alltid vært sårbare og kommer alltid til å være sårbare. Ta bilen som et eksempel. Helt siden Carl Benz oppfant den først bensindrevne bilen i 1886 har vi vært sårbare for bilkræsj.  </aside>
 					<section>
@@ -78,15 +70,16 @@
 					</section>
 					<section>
 						<h1>CVE & CVSS</h1> 
-						<div  style="text-align:left;">
+						<div>
+							<ul>
 							<div class="fragment fade-in">
-								CVE er vår felles liste med:
+								CVE er listen over sårbarheter
 								<div style="margin-left:100px">
 									<h3><li>Common Vulnerabilities and Exposures</li></h3>
 								</div>
 							</div>
 							<div class="fragment fade-in">
-								CVSS er vårt felles:
+								CVSS er standarden vi bruker for å vurdere sårbarheter
 								<div style="margin-left:100px">
 									<h3><li>Common Vulnerability Scoring System</li></h3>
 								</div>
@@ -100,6 +93,7 @@
 									
 								</div> 
 							</div>
+							</ul>
 						</div>
 					</section>
 				</section>
@@ -121,8 +115,9 @@
 					<section>
 						<a href="https://nvd.nist.gov/vuln/detail/CVE-2020-8441" target="_blank"><h1>CVE-2020-8441</h1></a>
 						<div>
-							<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:U/RC:R/CR:H/IR:L/AR:L/MAV:A/MAC:H/MPR:L" target="_blank"><span  style="font-size: 0.8em;"><span class="fragment highlight-current-red">CVSS:3.1</span><span class="fragment highlight-current-red">/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</span><span class="fragment highlight-current-red">/E:P/RL:U/RC:R</span><span class="fragment highlight-current-red">/CR:H/IR:L/AR:L/MAV:A/MAC:H/MPR:L</span></span></a>
+							<a href="https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:U/RC:R/CR:H/IR:L/AR:L/MAV:A/MAC:H/MPR:L" target="_blank"><span  style="font-size: 1em;"><span class="fragment highlight-current-red">CVSS:3.1</span><span class="fragment highlight-current-red">/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</span><span class="fragment highlight-current-red">/E:P/RL:U/RC:R</span><span class="fragment highlight-current-red">/CR:H/IR:L/AR:L/MAV:A/MAC:H/MPR:L</span></span></a>
 						</div>
+						<br/>
 						<img class="plain_custom" src="img/cvss_format.png">
 					</section>
 					<section>
@@ -136,14 +131,16 @@
 					<aside class="notes">Automatisering </aside>
 					<section>
 						<h1>Løsningen</h1>
-						<div class="fragment fade-in" ><h2>Automatiser og oppgrader</h2></div>
+						<div class="fragment fade-in" ><h2>Dropp sårbarhetsvurderingen</h2></div>
+						<div class="fragment fade-in" ><h2>Oppgrader alle avhengigheter så fort du kan...</h2></div>
 					</section>
 					<section>
 						<h1>Steg 1: innsamlingen av sårbarhetsinformasjonen</h1>
-						<h3>Automatisk sårbarhetsscan og innsamling av info</h3>
-						<div>
+						
+						<div class="fragment fade-in">
+							<h3>Automatisk scan med bruk av:</h3>
 							<ol>
-								<li>Snyk (komersielt)</li>
+								<li>Snyk (kommersielt)</li>
 								<li>OWASP Dependency-Check (open source)</li>
 								<li>WhiteSource Bolt (kommersielt)</li>
 								<li>Dependency Track (open source)</li>
@@ -155,22 +152,15 @@
 						</div>
 					</section>
 					<section>
-						<h1>Steg 2: Oppgrader alt som kan oppgraderes</h1>
-						<div>Hold din avhengigheter oppdatert. Benytt muligheter for automatisk oppdatering.</div>
+						<h1>Steg 2: Oppgrader alt som oppgraderes kan</h1>
+						<div class="fragment fade-in">Hold din avhengigheter oppdatert. Benytt muligheter for automatisk oppdatering.</div>
 					</section>
 					<section>
 						<h1>Steg 3: manuell vurdering av sårbarheter</h1>
-						<h2>Dette steget må for all del unngåes</h2>
+						<div class="fragment fade-in" ><h2>Dette steget må for all del unngåes</h2></div>
 					</section>
 			</section>
-			<section>
-				<aside class="notes">Eksempler</aside>
-				<section>Eksempel 1
-					<div>CVE-2020-9546 -> 9548</div>
-					<div>jackson-databind 2.10.2, brukt av spring-boot</div>
-				</section>
-			</section>
-				<section>
+				<section  data-background="img/bouvet_packman.png" data-background-size="500px" data-background-position="left" >
 					<h1>Oppsummering</h1>
 					<br/>
 					
@@ -178,7 +168,7 @@
 						<li>Sårbarheter vurderes med CVSS standarden
 							<ul><li><a href="https://www.first.org/cvss/calculator/" target="_blank">https://www.first.org/cvss/calculator/</a></li></ul>
 						</li>
-						<li>Din byggepipeline skal inneholde:
+						<li>Din byggepipeline <span style="color:whitesmoke">skal</span> inneholde:
 							<ul>
 								<li>Automatisk sårbarhetsscan av avhengigheter</li>
 								<li>Forsøk på automatisk oppgradering</li>
@@ -188,6 +178,7 @@
 							<ul><li>Men må du:  <span style="color:whitesmoke">så vet du nå hvordan!</span></li></ul>
 						</li>
 					</ul>
+					<img class="plain_custom" src="img/bouvetone_ghosts.png">
 				</section>
 			</div>
 		</div>
