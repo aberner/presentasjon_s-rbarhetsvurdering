@@ -42,6 +42,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "reveald3": "^1.5.5"
+    "reveald3": "^2.0.0"
   }
 }
