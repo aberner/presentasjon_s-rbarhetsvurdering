@@ -15,10 +15,11 @@ Du trenger en enkel HTTP-server for å kjøre presentasjonen lokalt. Velg en av 
 ### Metode 1: NPM (Anbefalt for Node.js-brukere)
 
 ```bash
+npm install
 npm start
 ```
 
-Dette vil starte en HTTP-server på port 8000. Åpne deretter http://localhost:8000 i nettleseren.
+Dette vil installere nødvendige avhengigheter og starte en HTTP-server på port 8000. Åpne deretter http://localhost:8000 i nettleseren.
 
 ### Metode 2: Python 3
 
@@ -74,6 +75,8 @@ For mer informasjon om hvordan du kan tilpasse presentasjonen, se:
 ## Deployment til GitHub Pages
 
 Presentasjonen er allerede konfigurert for GitHub Pages. Nye endringer pushet til `main`-branchen vil automatisk bli publisert.
+
+**Merk:** GitHub Pages serverer de statiske filene direkte - ingen HTTP-server eller npm-pakker er nødvendig for produksjonsmiljøet. `http-server` er kun en lokal utviklingsavhengighet.
 
 ## Teknisk informasjon
 

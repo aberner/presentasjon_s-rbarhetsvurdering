@@ -15,5 +15,8 @@
     "type": "git",
     "url": "git://github.com/hakimel/reveal.js.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
