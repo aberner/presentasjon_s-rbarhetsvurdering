@@ -94,7 +94,7 @@ All other dependencies are actively used:
 ## Recommendations
 
 ### Future Considerations
-1. **node-sass deprecation**: Consider migrating from `node-sass` to `sass` (Dart Sass) as node-sass is deprecated and has compatibility issues with newer Node.js versions.
+1. **node-sass deprecation**: Consider migrating from `node-sass` to `sass` (Dart Sass). The node-sass package was officially deprecated in 2020 and has compatibility issues with Node.js versions 16+. The current version (4.13.1) may not build on modern systems. Dart Sass is the primary implementation maintained by the Sass team.
 
 2. **Grunt modernization**: Consider evaluating if a more modern build tool (webpack, vite, or npm scripts) would be more maintainable for this project.
 
