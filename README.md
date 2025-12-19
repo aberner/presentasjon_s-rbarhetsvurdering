@@ -1,89 +1,57 @@
 # Hvordan angripe kjente sårbarheter i din applikasjon?
 
-Presentasjon i sårbarhetsvurdering av tredjepartsbiblioteker
+Presentasjon om sårbarhetsvurdering av tredjepartsbiblioteker
 
 **Live presentasjon:** https://aberner.github.io/presentasjon_s-rbarhetsvurdering
 
 ## Om presentasjonen
 
-Denne Reveal.js-presentasjonen fokuserer på hvordan man kan identifisere og håndtere kjente sårbarheter i tredjepartsbiblioteker. Presentasjonen er designet som en innholdsbasert løsning uten behov for byggeverkøy.
+Reveal.js-presentasjon som fokuserer på hvordan man kan identifisere og håndtere kjente sårbarheter i tredjepartsbiblioteker. Bruker Reveal.js 5.2.1 fra CDN for enkelt oppsett uten byggesteg.
 
-## Kjøre presentasjonen lokalt
+## Kjøre lokalt
 
-Du trenger en enkel HTTP-server for å kjøre presentasjonen lokalt. Velg en av metodene nedenfor:
+Presentasjonen krever en HTTP-server på grunn av ES modules. Velg en metode:
 
-### Metode 1: NPM (Anbefalt for Node.js-brukere)
+### NPM (Anbefalt)
 
 ```bash
 npm install
 npm start
 ```
 
-Dette vil installere nødvendige avhengigheter og starte en HTTP-server på port 8000. Åpne deretter http://localhost:8000 i nettleseren.
+Åpne http://localhost:8000
 
-### Metode 2: Python 3
-
-```bash
-python3 -m http.server 8000
-```
-
-Åpne http://localhost:8000 i nettleseren.
-
-### Metode 3: Python 2
+### Python
 
 ```bash
-python -m SimpleHTTPServer 8000
+python -m http.server 8000
 ```
 
-Åpne http://localhost:8000 i nettleseren.
+Åpne http://localhost:8000
 
-### Metode 4: VS Code Live Server
+### VS Code Live Server
 
-1. Installer "Live Server"-utvidelsen i VS Code
-2. Høyreklikk på `index.html`
-3. Velg "Open with Live Server"
-
-### Metode 5: Direkte åpning i nettleser (begrenset funksjonalitet)
-
-Du kan også åpne `index.html` direkte i nettleseren, men noen funksjoner kan være begrenset på grunn av CORS-restriksjoner.
+Høyreklikk på `index.html` → "Open with Live Server"
 
 ## Redigere presentasjonen
 
-1. Åpne `index.html` i din favoritt teksteditor
-2. Rediger innholdet mellom `<div class="slides">` og `</div>`
-3. Lagre filen
-4. Oppdater nettleseren for å se endringene
+Rediger `index.html` og oppdater nettleseren for å se endringene. Innholdet ligger mellom `<div class="slides">` taggene.
 
-### Reveal.js-dokumentasjon
-
-For mer informasjon om hvordan du kan tilpasse presentasjonen, se:
-- [Reveal.js på GitHub](https://github.com/hakimel/reveal.js)
-- [Reveal.js dokumentasjon](https://revealjs.com/)
+**Dokumentasjon:** [revealjs.com](https://revealjs.com/)
 
 ## Filstruktur
 
-```
+```txt
 ├── index.html          # Hovedpresentasjonsfil
 ├── css/               # Stilark for Reveal.js og temaer
 ├── js/                # Reveal.js JavaScript-filer
 ├── lib/               # Biblioteker (syntax highlighting, etc.)
-├── plugin/            # Reveal.js plugins
-├── img/               # Presentasjonsbilder og -videoer
-└── package.json       # Minimal konfigurasjon for npm start
-```
+├──Deployment
 
-## Deployment til GitHub Pages
-
-Presentasjonen er allerede konfigurert for GitHub Pages. Nye endringer pushet til `main`-branchen vil automatisk bli publisert.
-
-**Merk:** GitHub Pages serverer de statiske filene direkte - ingen HTTP-server eller npm-pakker er nødvendig for produksjonsmiljøet. `http-server` er kun en lokal utviklingsavhengighet.
+Pushes til `main`-branchen publiseres automatisk på GitHub Pages.
 
 ## Teknisk informasjon
 
-- **Framework:** Reveal.js 3.9.2
-- **Ingen byggesteg kreves:** Alle filer er ferdig bygget og klare til bruk
-- **Ingen avhengigheter:** Alle nødvendige biblioteker er inkludert i repository
-
-## Lisens
-
-MIT
+- **Framework:** Reveal.js 5.2.1 (CDN)
+- **Ingen byggesteg:** Statiske filer klare til bruk
+- **Dev server:** http-server (kun for lokal utvikling)
